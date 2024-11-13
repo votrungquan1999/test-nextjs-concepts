@@ -29,17 +29,19 @@ export default function NoSSR<Props>(
 
 	WrappedDevelopment.displayName = `NoSSR(${Component.displayName || Component.name})`;
 
-	function WrappedProduction(p: Props & JSX.IntrinsicAttributes) {
-		if (typeof window !== "object") {
-			throw new Error(
-				`${Component.displayName} can only be rendered in the browser`,
-			);
-		}
-		return <Component {...p} />;
-	}
+	// function WrappedProduction(p: Props & JSX.IntrinsicAttributes) {
+	// 	if (typeof window !== "object") {
+	// 		throw new Error(
+	// 			`${Component.displayName} can only be rendered in the browser`,
+	// 		);
+	// 	}
+	// 	return <Component {...p} />;
+	// }
 
-	WrappedProduction.displayName = `NoSSR(${Component.displayName || Component.name})`;
-	return process.env.NODE_ENV === "production"
-		? WrappedProduction
-		: WrappedDevelopment;
+	return WrappedDevelopment;
+
+	// WrappedProduction.displayName = `NoSSR(${Component.displayName || Component.name})`;
+	// return process.env.NODE_ENV === "production"
+	// 	? WrappedProduction
+	// 	: WrappedDevelopment;
 }
