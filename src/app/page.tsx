@@ -26,6 +26,12 @@ export default function Home() {
 					try react &ldquo;use&rdquo; API
 				</Link>
 
+				<Link
+					href="/tests/unauthorized"
+					className="text-blue-500 hover:text-blue-600 underline"
+				>
+					Unauthorized Page
+				</Link>
 			</div>
 		</div>
 	);
