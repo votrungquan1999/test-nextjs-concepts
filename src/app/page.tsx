@@ -18,6 +18,14 @@ export default function Home() {
 				>
 					No SSR in layout
 				</Link>
+
+				<Link
+					href="/tests/react_use_api"
+					className="text-blue-500 hover:text-blue-600 underline"
+				>
+					try react &ldquo;use&rdquo; API
+				</Link>
+
 			</div>
 		</div>
 	);
